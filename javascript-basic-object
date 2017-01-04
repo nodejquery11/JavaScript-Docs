@@ -1,0 +1,26 @@
+What is closure?
+A closure is an inner function that has access to the outer (enclosing) function's variables—scope chain. There are scopr chain
+> Own scope (variables defined between its curly brackets)
+> Access to the outer function's variable
+> Acces to the global variable
+function create() {
+   var counter = 0;
+   return {
+      increment: function() {
+         counter++;
+      },
+  
+      print: function() {
+         console.log(counter);
+      }
+   }
+}
+var c = create();
+c.increment();
+c.print();
+
+Will javascript support the overloading or overridding?
+
+
+How to check the type of variable in JS?
+> Using `typeof` operator, we can check the `data type` of variable. In JavaScript we have only three kind of variable Number, String and boolean. However we have two more variable type `NULL` & `undefined`. 
