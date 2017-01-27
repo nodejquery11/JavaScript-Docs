@@ -20,7 +20,64 @@ c.increment();
 c.print();
 
 Will javascript support the overloading or overridding?
+JS doesn't support the overloading but support the overridding.
 
 
 How to check the type of variable in JS?
 > Using `typeof` operator, we can check the `data type` of variable. In JavaScript we have only three kind of variable Number, String and boolean. However we have two more variable type `NULL` & `undefined`. 
+
+How to create the custom object in JS?
+var athlete = new Object();
+
+Type of loop, which reterive the object properties when their name are unknown
+for ... in
+Syntax: 
+  for(<obj> in <main_obj>){
+    document.writeln(<main_obj>[<obj>]);
+  }
+============================================================================================================
+
+How to create the prototype?
+JS have `ptototype` keyword. which can be add the properties into the constructor function or else override the property value using the `object` of contructor.
+Syntax: <name_of_object_or_constructor_function>.prototype.<userdefine_properties>
+Ex. Car.prototype.color = 'red';
+
+Even though we can also create the prototype method using the `prototype` keyword
+Syntax:
+Ex 
+Car.prototype.reportInfo = function(){ //anonymous function
+   .... respected code ...
+}
+
+If we want to override the property of current define property then we need to do below process
+var honda = new Car("CRV", "4", "185"); // carete an object for constructor
+honda.color = 'blue'; //override the property value
+
+Calling the prototype method
+honda.reportInfo();
+
+function Car(model, numCylinder, horsepower){ /*constuctor function*/
+   this.model = model;
+   this.numCylinder = numCylinder;
+   this.horsepwoer = horsepower;
+ }
+ /*add the property using prototype*/
+ Car.prototype.color = 'red';
+ 
+ /*add the method using prototype*/
+ Car.prototype.reportInfo = function(){
+   document.write( ...)
+ }
+ 
+ var honda = new Car("CRV", "4", "185"); //create an object for constructor
+ honda.reportInfo(); 
+ 
+==============================================================================================================
+
+Inharitance [prototype chaining] & Extending the classes in JS?
+
+
+Note:
+one suggestion, which should not do into the production code. If you use the `i < <var>.lenght` in directly to the for loop. In this case your loop go through the document object and parse the values in array and count it. It can be increase the resorce intensivity, if in your array has lots of values. So you need to declare the variable and initialize it.
+
+
