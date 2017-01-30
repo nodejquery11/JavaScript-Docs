@@ -80,4 +80,94 @@ Inharitance [prototype chaining] & Extending the classes in JS?
 Note:
 one suggestion, which should not do into the production code. If you use the `i < <var>.lenght` in directly to the for loop. In this case your loop go through the document object and parse the values in array and count it. It can be increase the resorce intensivity, if in your array has lots of values. So you need to declare the variable and initialize it.
 
+Topic: 31/Jan/17
+Besic data type in JS
+Regular Expression
+SubSting & formatting the string
+Math & Date Object
+
+undefine & null variable:
+> if you want to find or know the variable `type` then in JS has keyword call `typeof`.
+> if you initialize the variable but not assign the value to it then it will trigger the `undefined` statement.
+ex.  var x;
+(typeof x === 'undefined')? 'undefined' : 'value ' + x + ';' + typeof x;
+
+How to create empty object in JS?
+> var x = {};
+
+Regular Expression:
+literal Regular Exp (String variable) : /<string>/<modifier>
+Ex. re = /Sample/i
+Checking Methods in Reg Exp:
+re.exec(<string>); // it will return the exact variable value
+re.test(<string>); //true & false value
+
+Regular Exp as an object: new RegExp('<string>', 'modifier');
+
+SubSting: str.substr('<starting_index_number>', <num_string_or_chr>');
+str.substring('<starting_index_number>', <num_chr_increseing>>' //it will start from index value but choose the zero index to num of cahr.
+Ex. str = 'Hello World';
+var x = str.substr(2, 3);
+document.write('Num of string '+ x);
+output: llo
+var x = str.substring();
+document.write('Num of string '+ x);
+output: l
+
+Formatting String:
+str.toLowerCase(); //Change all the char in lower case
+str.toUpperCase(); //Change all the char in upper case
+str.trim(); //trim white space in both side
+str.bold(); //make the char bold
+
+Number formatting:
+num.toFixed(<dec_place>);
+num.toPrecision();
+num.toLocaleSring(); //to get the orignal value
+
+Math object
+math.random(); // return the random number 0 to 1
+math.floor(); //return the round number
+
+Date & Time object: t = new Date();
+t.toString(); //string rep of date object
+t.toGMTString();
+t.toUTCString();
+t.toLocaleDateString(); //return date accordning the geo location
+t.getDay();
+t.setYear();
+
+Boolean Object: b = new Boolean();
+Ex. c= Boolean(2>5); //false
+
+Working with Files:
+Working with XML files: xmlHttp = new XMLHttpRequest(); //object creation
+xmlHttp.open('GET/POST', 'URL', false/true); //method Asynchronus as per the (true & false)
+xmlHttp.send();
+xmlHttp.readyState / 
+xmlHttp.status
+xmlDom = xmlHttp.responseXML //get response from the dom object
+>>xmlDom.getElementByTag("<ele_name>")[<index_num>].childNodes[<index_num>].nodeValue;
+
+JS event:
+> document.getElementById('ele_name').addEventListener('event_name [like click]', 'function_name', asynch (true/false));
+> need to understand the `event`object like function_name(even);
+>> event.timeStamp;
+>> event.target.id;
+>> event.clientX / event.clientY;
+onclick/ onchange
+onmouseover/onmouseout
+
+Timer Function: 
+window.setTimeout('function_name', 'delay_time_mili_sec'); //it will execute the function as per the delay set
+window.clearTimeout(timerid); //It will clear all set time before
+window.setInterval(function(){ .. }, 'delay_time_mili_sec'); //in each interval of time the method will execute
+
+Debugger & error stack
+Stack property of function [ the stack property gets or sets the error stack as a string containing the stack trace frames]
+in JS, error object has stack property [e.stack][use to figure out the wich function or line have error]
+
+Encoding & decoding the URl:
+>encodeURIComponent('url_val');
+>decodeURIComponent('encode_val'); [convert the values in string then use `object.toString`]
 
