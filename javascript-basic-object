@@ -171,3 +171,22 @@ Encoding & decoding the URl:
 >encodeURIComponent('url_val');
 >decodeURIComponent('encode_val'); [convert the values in string then use `object.toString`]
 
+Moving object into the screen using HTML 5 & JS
+document.addEvenListener('keydown', function(event){
+  if(event.keyCode == 37){ .... }
+});
+> document.getElementById('ele_id').style.left / style.top
+
+var_name.match(/^[0-9.-]+$/) // matching the value using regular expression
+Number(var_value); //convert into integer
+eval() //has ability to turn of the string into real javascript code, so u can make dynamic things using eval command
+
+Create an array
+
+> if you use the syntax of any jQuery library and the jQuery is not install in your application then it will throw an error.
+How to use dynamic css?
+$("p").css({"background-color":"yellow", next_property, ...}); [`{` allow you to manipulated the miltiple properties in single function in jQuery]
+
+Algorithem on Style
+Remain .....
+
