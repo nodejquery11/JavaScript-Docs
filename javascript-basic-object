@@ -190,3 +190,79 @@ $("p").css({"background-color":"yellow", next_property, ...}); [`{` allow you to
 Algorithem on Style
 Remain .....
 
+> For and each loop
+for(i=0; i<list.lenght; i++){ .... }
+similar
+object.each(function(i){ //`i` is denote as index
+   $(this).css(....);
+}
+If you don't want to pass this then you can use the below method
+object.each(function(i, item){
+   $(item).css( .... );
+}
+
+========================================================================================================
+Functions in jQuery
+
+1. [selector].load() // When body will be load in browser
+Syntax: $("#element").load();
+Syntax: $("#element").load(URL, {action: "<value>"}, function(){
+            alart("message");
+        }
+Syntax: $("#element").load(URL <jQuery_selector>, {action: "<value>"}, function(){
+            alart("message");
+        }
+
+2. [selector].find("<elements>") //search the parent and child method
+Syntax: $("#element").find("span").css( ... );
+
+3.[selector].filter(":<selector>").parent().addClass("<value>");
+
+Ex. $("input").filter(":checked").parent().addClass("red");
+Ex. $("label input").parent().filter(function(i){
+       if($(this).text().indexOf("o") > -1) //taking text from all and search the index value `o`
+	  return true;
+       else
+	  return false;
+    }).addClass("bord");
+
+Ajax function:
+
+$.ajax({
+   type: "post/get",
+   url: "myServerScript.php"
+   async: false, // If you want that full page wait for server response and nothing will happen ( default = true)
+   data: {
+	action: "simple/wait" // wait: will be return the response after some wait
+	message: msg
+   },
+   dataType: "xml" //script, xml, text, json will cause parsing error
+   success: callback //it is function define by user only
+   });
+
+> If you wan add contain dynamically in web page 
+$("#element").append("value");
+
+> $("#tab").tabs();
+
+>working with remote data [ using JSON method]
+>Selecting Descendant Elements:
++ sign denote the adjesent 
+var item = $("h2 + div"); // it looks the element div next to h2 element, if it is not there then it will not work.
+~ sign denote the sibling
+var item = $("h2 ~ div"); // it looks h2 and search the div element in whole page
+
+> Selector by other attribute:
+var item = $("[name='sername']").val();
+or
+var item = $("[name]").val(); //it will return the values of those element, who contain the `name` attribute
+or 
+var item = $("input [name = 'sername']").val(); //it will effect all input element but filter `attribute` must sername.
+
+>Selection via Pseudo selector
+> Selecting children
+var item = $('table').children(); //select all child elements
+or 
+var item = $('table').children('tbody'); //only select the tbody
+
+Other functions in jQuery
