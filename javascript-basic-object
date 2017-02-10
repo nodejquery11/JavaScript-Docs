@@ -265,4 +265,128 @@ var item = $('table').children(); //select all child elements
 or 
 var item = $('table').children('tbody'); //only select the tbody
 
+===========================================================================10/Feb/17
+[selector].filter(":<selector>").parent().addClass("<value>");
+
+Ex. $("input").filter(":checked").parent().addClass("red");
+Ex. $("label input").parent().filter(function(i){
+       if($(this).text().indexOf("o") > -1) //taking text from all and search the index value `o`
+	  return true;
+       else
+	  return false;
+    }).addClass("bord");
+
+Ajax function:
+$.ajax({
+   type: "post/get",
+   url: "myServerScript.php"
+   async: false, // If you want that full page wait for server response and nothing will happen ( default = true)
+   data: {
+	action: "simple/wait" // wait: will be return the response after some wait
+	message: msg
+   },
+   dataType: "xml" //script, xml, text, json will cause parsing error
+   success: callback //it is function define by user only
+   });
+
+> If you wan add contain dynamically in web page 
+$("#element").append("value");
+
+> $("#tab").tabs();
+
+>working with remote data [ using JSON method]
+
+>Selecting Descendant Elements:
++ sign denote the adjesent 
+var item = $("h2 + div"); // it looks the element div next to h2 element, if it is not there then it will not work.
+~ sign denote the sibling
+var item = $("h2 ~ div"); // it looks h2 and search the div element in whole page
+
+> Selector by other attribute:
+var item = $("[name='sername']").val();
+or
+var item = $("[name]").val(); //it will return the values of those element, who contain the `name` attribute
+or 
+var item = $("input [name = 'sername']").val(); //it will effect all input element but filter `attribute` must sername.
+
+>Selection via Pseudo selector
+> Selecting children
+var item = $('table').children(); //select all child elements
+or 
+var item = $('table').children('tbody'); //only select the tbody
+
+Ajax
+XMLHttpRequest() :: JS class
+window.XMLHttpRequest();
+ActiveXObject("Microsoft.XMLHTTP") :: JS class
+window.ActiveXObject():
+
+/*
+major Points in Ajax
+1. Initilization
+2. Open
+3. State Change
+4. Ready state & status ==200
+5. response & close
+
+ajaxRequest = new XMLHttpRequest(); //initilization
+ajaxRequest.open("<..method..>", "<..file_name.. like xml/html/php>", true); // Open
+ajaxRequest.onreadystatechange = function(){ //state Change
+  if(ajaxRequest.readyState == 4&& ajaxRequest.status == 200){ //ready state and status
+     myXMLDoc = ajaxRequest.responseXML; //response
+  }
+}
+*/
+
+Note: 
+ECMAScript such as JS & VB Script
+Communication is only the one way - the browser always initiates the request to the server - this model called the synchronous model.
+Four type of JS object,
+1. Built-in-object [Math, Date & string etc],
+2. Browser Object [object support by JS are called `host` objects. They handle the characteristic and properties of web browser. Window & History],
+  >history object contain back/forward/go method and u can access it using `.` operator like history.back(3), so once you click on the back button it will be back 3 pages
+  >location object contain href method to redirect the page on the specified the url like location.href = `example.html`
+  >document.form("form_name");
+  >navigator object, provide information about the client browser.
+  >window.screen.height/availTop/.width/availLeft, window.moveTo(X, Y)
+
+3. User-defined object [create your own object using built-in-object],
+  > Create the user define object using `Object()` constructor
+  > destructor function will be declare inside of the main function like 
+  function abc(name, price){
+    this.name = name;
+    this.price = price;
+    this.destroy = function(){ //this is the destructor of abc function or class
+	delete this.name;
+	delete this.price;
+    }
+  }
+4. Document object
+
+
+/*How to create the DOM object or element dynamically and add into body using JS*/
+var newPara = document.createElement("p");
+document.createTextnode("<message_values>");
+document.body.appendChild(newPara);
+
+/*IF you want to attached or detach the event in JS for IE */
+elementObject.attachEvent('method_or_action', callback);
+Ex. membershipDiv.attachedEvent('click', changehref);
+
+elementObject.detachEvent('method_or_action', callback);
+Ex. membershipDiv.detachEvent('click', changehref);
+
+/*IF you want to attached or detach the event in JS in Mozila or other browser */
+elementObject.addEventListener('Event_Name', 'Function_Name', true/false); //true or false for use in event capturing or bubbling  flow respectively
+Ex. membershipDiv.addEventListener('click', changehref, false);
+Ex. membershipDiv.removeEventListener('click', changehref, false); // to remove the added event
+
+
+>You want to create object that helps you to navigate three pages forward whe nthe user click the right arrow in the browser? Ans:: history.farward(3);
+> How can u distroy the javascript object? Ans:: create distructor (learn) object or using delete operator
+> How can Ajax model work for the application? 
+  Ans:: provide continuous interactive on web pages, update web page partially
+> After the XMLHttpRequest object is created, the request body is constructed the code. How to construct the request body? Ans:: var 
+> Open a POSt request on the XMLHttpRequest object. Request data is form -URl encoded? Ans:: ajax.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
 Other functions in jQuery
