@@ -1,0 +1,18 @@
+# Reusable common 
+
+> This function use to find the unique value in array.
+var unique_array = function(arg){
+var output_array = [];
+for( var i=0; i<arg.length; i++){
+  for(var j=0; j<i; j++){
+    if(arg[i] === arg[j]){
+      break;
+    }
+  }
+  if(i === j){
+    output_array.push(arg[i]);
+  }
+}
+ return output_array;
+}
+> 
