@@ -153,53 +153,6 @@ JS event:
 > document.getElementById('ele_name').addEventListener('event_name [like click]', 'function_name', asynch (true/false));
 > need to understand the `event`object like function_name(even);
 >> event.timeStamp;
->> event.target.id;
->> event.clientX / event.clientY;
-onclick/ onchange
-onmouseover/onmouseout
-
-Timer Function: 
-window.setTimeout('function_name', 'delay_time_mili_sec'); //it will execute the function as per the delay set
-window.clearTimeout(timerid); //It will clear all set time before
-window.setInterval(function(){ .. }, 'delay_time_mili_sec'); //in each interval of time the method will execute
-
-Debugger & error stack
-Stack property of function [ the stack property gets or sets the error stack as a string containing the stack trace frames]
-in JS, error object has stack property [e.stack][use to figure out the wich function or line have error]
-
-Encoding & decoding the URl:
->encodeURIComponent('url_val');
->decodeURIComponent('encode_val'); [convert the values in string then use `object.toString`]
-
-Moving object into the screen using HTML 5 & JS
-document.addEvenListener('keydown', function(event){
-  if(event.keyCode == 37){ .... }
-});
-> document.getElementById('ele_id').style.left / style.top
-
-var_name.match(/^[0-9.-]+$/) // matching the value using regular expression
-Number(var_value); //convert into integer
-eval() //has ability to turn of the string into real javascript code, so u can make dynamic things using eval command
-
-Create an array
-
-> if you use the syntax of any jQuery library and the jQuery is not install in your application then it will throw an error.
-How to use dynamic css?
-$("p").css({"background-color":"yellow", next_property, ...}); [`{` allow you to manipulated the miltiple properties in single function in jQuery]
-
-Algorithem on Style
-Remain .....
-
-> For and each loop
-for(i=0; i<list.lenght; i++){ .... }
-similar
-object.each(function(i){ //`i` is denote as index
-   $(this).css(....);
-}
-If you don't want to pass this then you can use the below method
-object.each(function(i, item){
-   $(item).css( .... );
-}
 
 ========================================================================================================
 Functions in jQuery
@@ -388,5 +341,94 @@ Ex. membershipDiv.removeEventListener('click', changehref, false); // to remove 
   Ans:: provide continuous interactive on web pages, update web page partially
 > After the XMLHttpRequest object is created, the request body is constructed the code. How to construct the request body? Ans:: var 
 > Open a POSt request on the XMLHttpRequest object. Request data is form -URl encoded? Ans:: ajax.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
+================================================================12/March/17
+which of the following symobls is used to select a direct descendant of an element? Ans:: >
+Which code statement search the area with ID content and select the list element with a child of an unnumbered list, which itself has child of a list element? var items = $("#content li ul li");
+
+//How to dynamic color
+var i = 0;
+var colorArray = ['red','black','green','pink','white'];
+var runner = window.setInterval(function(){
+	$(".p1").css("background-color", colorArray[i]);
+	i = (i + 1) % colorArray.lenght
+},<set_time_interval>);
+
+window.clearInterval(runner);
+
+//Animation function
+Syntax:: $("element").animate({<style_properties>},"slow", function(){ .... });
+
+$("element").animate({height:'300px', opacity:'0.4'},"slow");
+or
+$("element").animate({
+	height: "toggle",
+	width: "toggle"
+ }, {
+ 	duration: 5000,
+ 	specialEasting: {
+ 		width: "liner",
+ 		height: "swing"
+ 	}
+ });
+
+ $("element").finish(); // to finish the first ocurance and rest will work as similar
+ $("element").stop(); // to pouse the animation for sometime and it will again start with the same position
+ $("element").stop(true, true); //1st arg: clear the queue means all occurance, 2nd arg: it tells element to jump into last occurance
+ $("element").clearQueue();
+ 
+ $("element").slideUp();
+ $("element").slideToggle(500);
+ $("element").fadeOut().delay(500).slideDown(2000);
+
+ Which function in jQuery is used to grab a previous sibling element? Ans:: $("element").prev();
+ Which function is used to chain animation? Ans:: delay();
+ Which function forces an animation to go to its end state? Ans:: $("element").finish();
+
+1. Premitive[simple variable always premitive because it store the current data] 
+2. Reference[array & object always create reference]
+
+Ex. var a = {name: "vikas"}
+	var b = {name: "bose"}
+
+	output a {name: "bose"}
+
+However 
+
+	var a = {name: "vikas", age: "23"}
+	/*first argument will be empty object, b will targetting it
+	  a will be the container variable
+	  last argument will be the replacement of object `name`
+	*/ 
+	var b = Object.assign({}, a, {name: "bose"})
+	output b {name: "bose", age: "23"}
+		   a {name: "vikas", age: "23"} // value of a didn't change, it is immutable
+
+For Array, concat, filter
+> Concat
+	var a = [1,2,3]
+	var b = a.concat(4)
+	output a [1,2,3]
+		   b [1,2,3,4]
+> filter
+	var a = [1,2,3]
+	var b = a.filter((val) => val !== 2)
+	output b [1,3]
+
+another Example::
+	var a = {name: "vikas", thing: [1,2,3]}
+	var b = Object.assign({}, a, {name: "bose"})
+	Now
+	b.thing [1,2,3]
+	if
+	b.thing.push(4)
+	then output b [1,2,3,4] and a [1,2,3,4] // mutable
+So that
+	var a = {name: "vikas", thing: [1,2,3]}
+	var b = Object.assign({}, a, {name: "bose"})
+	b.thing = a.thing.concat(4)
+	output b [1,2,3,4]	& a [1,2,3]
+
+Note: filter, map and reduce always return the brand new array and object
 
 Other functions in jQuery
