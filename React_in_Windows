@@ -1,0 +1,43 @@
+
+========================Configuration of CanadaSalesApp in Window Machine - Document
+1. NODE_ENV variable not present in the Windows machine and while running the app even it will not install it automatically. For this you need to follow the below steps
+	a. Run the command npm install -g -s cross_env
+	b. After installaion, you need to put prefix `cross_env` of NODE_ENV. Then you will not receive any enviormental error.
+
+2. Eslint error::
+	a. For `line break` style
+		1. Go to package.json and in the script object add new content {"lint": "eslint --env"} [to let process know that which enviornment you are using]
+		2. Add below line in the `.eslintrc` config file
+			"linebreak-style": [
+    			"error",
+    			"unix"
+			]{meaning of this lines are, lint give an error only in linux evn}
+		or
+		"linebreak-style": off [it will turn off fully the linebreak style of Eslint]
+3. Before apply line or step #4, you make sure that style_loader,postcss_loader,css_loader must be install in your `node_module` folder
+4. You need to comment out the line #157 from dev.config.js. Because it will access the stylelintrc configuration
+
+
+===========React & Redux Error
+error  'change' is missing in props validation  react/prop-types
+1. declare the `change` in static propType inside of class like 
+	static propTypes = {
+		change: React.PropType.func
+	}
+	this.props.change('<field>','<value>')
+2. If you need to disable the `Eslint feature` in specific file inline maneer then
+	/*eslint-disable*/
+		alert('vikas');
+  /*eslint-enable*/
+
+============React & Redux functions
+1. if you need to overwrite any redux form value, which are store in syncStorage then you can use the Redux inbuilt function change
+	Syntax: this.props.change('field_name','value');
+2. map function. This function will usually applicable for array. It will return the values and key
+	Syntax: const x = [1,2,3,4];
+	x.map((item,index)=>{
+		console.log('Item'+item +', Index'+ index);
+	});
+3. if you need to convert integer or numaric value into string then you can use `toString()` function.
+	Syntax: number.toString();
+4.
