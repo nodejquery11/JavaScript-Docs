@@ -1,0 +1,9 @@
+Eslint Rules::
+
+> Disable `eslint rule` from full page 
+	/*eslint-disable*/
+> Disable `eslint rule` from single or inline
+	// eslint-disable-line
+	// eslint-disable-line no-use-before-define [it will not work on before statement or syntax]
+	
+	
