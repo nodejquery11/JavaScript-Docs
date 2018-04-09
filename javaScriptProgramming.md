@@ -1,9 +1,8 @@
 /* Convert Lower to Upper */
-
 var upperObj = {
-  97: 'A',
-  98: 'B',
-  99: 'C',
+  97 : 'A',
+  98 : 'B',
+  99 : 'C',
   100: 'D',
   101: 'E',
   102	: 'F',
