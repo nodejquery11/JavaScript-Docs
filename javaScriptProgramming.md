@@ -56,5 +56,3 @@ var countD = (num) => {
 };
 
 countD(1);
-
-
