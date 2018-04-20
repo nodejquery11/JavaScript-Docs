@@ -1,0 +1,24 @@
+#callback
+As we know that javascript is even driven programming lanagage. So once the even will happen then it will return some output. Sometime the output might be usefull for another events. So we create the saparate function and we call those function inside of one script. It is call modularization but JS give us the ability to pass the function as argument and utlize the parent function or value as input for next function till it will not get sucess result. So this is call `callBack`.
+let loadScript = function(src, cb) {
+	let script = document.createElement('script');
+	script.src = src;
+	script.onload = function() {
+		 cb(script);
+	}
+	document.head.append(script);
+};
+loadScript('/js/main.js', function(d){
+	 console.log(d);
+});
+
+ multiple cllbacks: It is the procedure, where we call one after another callback, if sucess. 
+ loadScript('/js/main.js', function(d) {
+ 	  console.log('...code..');
+		loadScript('/js/main2.js', function(d) {
+			 console.log('...code2..');
+		});
+ });
+
+
+	
