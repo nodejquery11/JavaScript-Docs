@@ -49,11 +49,35 @@ var str = 'how r u? am good, thank u.';
 var converLowerToUpper = converLowerToUpper(str);
 console.log(converLowerToUpper);
 
-/* increment count down*/
+/* increment count down - recursive function*/
 var countD = (num) => {
   if (num >= 11) return;
   console.log(num);
   countD(num + 1);
 };
-
 countD(1);
+
+/*make array of key in upper case*/
+'use strict';
+let arrInput = [];
+let arrFinalOutput = [];
+
+arrInput['vikas'] = 1;
+arrInput['bose'] = 'a';
+arrInput['siva'] = 'vbo';
+arrInput['kotresh'] = 'vbo';
+arrInput['Dinesh'] = 2;
+arrInput['broTher'] = '?';
+arrInput['sIsTer'] = 'cdfdf';
+
+for(arrInputs in arrInput) {
+  arrFinalOutput[arrInputs.toUpperCase()] = arrInput[arrInputs];
+}
+
+
+
+
+
+
+
+
