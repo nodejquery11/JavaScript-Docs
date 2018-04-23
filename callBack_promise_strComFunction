@@ -39,4 +39,25 @@ loadScript('/js/main.js', function(d){
 Note: in promise, we thing for natural order to create the code. So fist we run main function and `.then` we think about the next 
 method like or result. `.then` can we use multiple times.
 
+# Common string function (IMP)
+a. str.charAt(indexNumber);           [it will return char of the string basis on the passing index]
+b. str.charCodeAt(indexNumber);       [it will return the ascii code basis of index value]
+c. str.concat(str2);                  [join two or more strings]
+d. str.fromCharCode(indexNumber);     [it will return the char value basis of ascii code]
+e. str.includes(value);               [it will return the boolean value if the value exist in the string]
+f. str.indexOf();                     [if it will return the posivie value then searching value is exist or else not]
+g. str.match(str);                    [it will return you exeact maching string, it is also follow the case sensitivness]
+h. str.repeat(val);                   [it will create the copy of parent string basis of passing argment]
+i. str.replace(replaceString);        [it will replace the current value using pass arg]
+j. str.search(val);                   [it will return the index value, where the string is]
+k. str.split();                       [to split the string either obj or array]
+l. str.slice(startIndex, sliceIndex); [it will return the string basis of both argument]
+m. str.toLowerCase() & str.toUpperCase & str.toString()
+n. str.valueOf();                     [to return the exeact value]
+
+
+
+
+
+
 	
