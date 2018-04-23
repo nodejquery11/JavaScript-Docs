@@ -74,6 +74,28 @@ for(arrInputs in arrInput) {
   arrFinalOutput[arrInputs.toUpperCase()] = arrInput[arrInputs];
 }
 
+/* pass the string and convert vowel into capital latter */
+console.log(str.replace(/[aeiou]/gi, 
+  function(a){
+   return a.charAt().toUpperCase();
+}));
+
+/* How to change the font color (inbuld function in JS str.fontColor(str, color)) */
+var fontColors = function(str, colorValue) {
+   var cElement = document.createElement("div");          [create element or heml tag]
+   var cElementStyle = document.createAttribute("style"); [for creating attribute like id, class etc]
+   cElementStyle.value = `color: ${colorValue}`;          [so this value assign to the style property or attribute]
+   cElement.setAttributeNode(cElementStyle);              [it will bind your property or attribute]
+   // cElementStyle.setAttribute("color", colorValue);
+   var t = document.createTextNode(str)                   [create or place the text into the tag]
+   cElement.appendChild(t);                               [it will bind the text or string in tag]
+   document.body.appendChild(cElement);                   [it will bind entier elemnt with body tag]
+   return cElement;                                       [if you want to see the function value then only return]
+}
+var a = "hello world";
+fontColors(a, "yellow");
+
+
 
 
 
