@@ -90,9 +90,30 @@ var f = ["Banana", "Orange", "Apple", "Mango"];
 9. f.splice(add_num_element, removing_element, elem_val1, elem_val2 ...); // to add or remove the element basis of first two arg.
 10.f.concat(arr1, arr2, ...); //concat arr1, arr2 values into first or main array.
 11.f.slice(start_index, dispaly_val_position);
-12.
 
+# Chaning in JS [https://schier.co/blog/2013/11/14/method-chaining-in-javascript.html]
+// define the class
+var fullName = function () {}
+// define prototype
+fullName.prototype.setName = function (name) {
+  this.name = name;
+  return this;
+}
+fullName.prototype.setSurname = function (lastName) {
+  this.surname = lastName;
+  return this;
+}
+fullName.prototype.save = function() {
+  console.log (this.name +'=='+ this.surname);
+}
 
+// create an object of empty class
+var x = new fullName();
+x.setName('vikas')
+  .setSurname('Bose')
+  .save();
+
+IMP note: if you try to write an normal prototype function and use chain then it will return an error into second function that `uncought error: property not defined or undefined`. To resolve this issue we need to send or return the output to the main object. So every prototype musy send the return the value.
 
 Note:
 $ Don't declare String, Number and Boolean as Object. Whenever you decalre variable with `New` keyword, it become an object.
@@ -105,12 +126,9 @@ $ JS numbers always 64bit floating point
 $ using new Number(value), you can make any value as number. type of will be object
 $ If you want to convert the valid string into milisecond then use Date.parse(pass_full_date);
 
-
-
 Topics:
 1. HTML DOM chapters
 2. Prototype Inheritance
 3. Litral Object & Concept
 4. JS regular Exp
 5. 
-
