@@ -10,7 +10,6 @@ Complex Data:
 2. Object
 3. Array
 
-
 Accessing the object properties:
 	objectName.propertyName OR objectName[propertyName]
 
@@ -19,7 +18,7 @@ In JS, scope is the set of variable, Object and function you have access to.
  - if you define the variable inside of function then variable scope must be inside of function. Local variable end once your function finish.
  - if you defien the variable outside of function then variable scope must be outside & inside of function. Global variable delete, when you close your browser.
 
-String Functions:
+# String Functions:
 var str = 'abcdefghijklmnop';
 1. str.lenght; //output: 16
 2. str.charAt(position_index) //output: a
@@ -42,7 +41,7 @@ var str = 'abcdefghijklmnop';
 var str2 = "a,b,c,d,e,f";
 14.str2.split(delimiter) //it will extract string with the help of delimiter and return array. But if the delimiter not match then it will return the same string. But empty argument will return the expacted value.
 
-Number Functions:
+# Number Functions:
 var num = 128;
 1. If you want to convert the decimal to Hex, Octal or binalry then you can update using toSting(16)
 	- num.toString(16); // convert decimal to Hex decimal
@@ -56,7 +55,7 @@ var num = 128;
 	- parseInt(10) // to return the decimal value
 	- parseFloat(10) //to return the float value of decimal variable
 
-Math Functions:
+# Math Functions:
 var value = 4.7;
 var series = '0, 150, 30, 20, -8, -200';
 1. Math.round(value); // output: 5 [if after decimal value more then 5 then it will convert it and +1 in main value]
@@ -77,7 +76,7 @@ var a = New Date(); // Pre-define object method & it is static object
 5. d.getFullYear(); //return the four digit year
 6. d.getMonth(); //return the month value
 
-Array Functions:
+# Array Functions:
 var f = ["Banana", "Orange", "Apple", "Mango"];
 1. f.length //return number 4
 2. f.push('value') //insert the value at end, for single value can be insert using f[5] = 'value'
