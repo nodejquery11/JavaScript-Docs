@@ -124,10 +124,3 @@ $ Formally strings are immutable, it can't change only replaced.
 $ JS numbers always 64bit floating point
 $ using new Number(value), you can make any value as number. type of will be object
 $ If you want to convert the valid string into milisecond then use Date.parse(pass_full_date);
-
-Topics:
-1. HTML DOM chapters
-2. Prototype Inheritance
-3. Litral Object & Concept
-4. JS regular Exp
-5. 
