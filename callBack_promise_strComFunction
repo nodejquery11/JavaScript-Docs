@@ -1,4 +1,4 @@
-**callback**
+/**callback**/
 
 As we know that javascript is even driven programming lanagage. So once the even will happen then it will return some output. 
 Sometime the output might be usefull for another events. So we create the saparate function and we call those function inside 
@@ -26,7 +26,8 @@ loadScript('/js/main.js', function(d){
  });
  Note: in callback we know with we will do with the output/result. And there can be only one call back.
  
- **Promise in JS:**
+ /**Promise in JS:**/
+ 
  Promise is the altranate of callback. As callback working as sequencial term but Promise work as parale so it is more efficeant. 
  Because it works also single thread but it does not wait for response or not dependent on the parent resultent.
  
@@ -40,7 +41,7 @@ loadScript('/js/main.js', function(d){
 Note: in promise, we thing for natural order to create the code. So fist we run main function and `.then` we think about the next 
 method like or result. `.then` can we use multiple times.
 
-**Common string function (IMP)**
+/**Common string function (IMP)**/
 
 a. str.charAt(indexNumber);           [it will return char of the string basis on the passing index]
 b. str.charCodeAt(indexNumber);       [it will return the ascii code basis of index value]
@@ -57,9 +58,70 @@ l. str.slice(startIndex, sliceIndex); [it will return the string basis of both a
 m. str.toLowerCase() & str.toUpperCase & str.toString()
 n. str.valueOf();                     [to return the exeact value]
 
+/**sort and remove duplicate from array**/
+// using callback
+Stpes of call back:
+1. create function or method, which call as a callback
+2. define method or function, where you can call the callback
+3. execute the method or function with callback as argument
 
+let mainArr = [12, 4, 6, 8, 1, 10, 11, 9, 7, 6, 1, 5, 2];
+var temp = [];
+step1:
+var sorting = function(mainArr) {
+  for(var i = 0; i < mainArr.length; i++) {
+    for(var j = 0; j < mainArr.length; j++) {
+      if(mainArr[j] > mainArr[j+1]) {
+        temp = mainArr[j];
+        mainArr[j] = mainArr[j+1];
+        mainArr[j+1] = temp;
+      }
+    }
+  }
+  return mainArr;
+}
+step2:
+var sortAndRemoveDup = function (input, callback) {
+  callback(input);
+}
+step3:
+sortAndRemoveDup(mainArr, sorting);
 
+/** ================================================================================================= **/
+'use strict';
 
+// Normal way JavaScript:
 
+let mainArr = [12, 4, 6, 8, 1, 10, 11, 9, 7, 6, 1, 5, 2];
+var temp = [];
+var removeDup = [];
 
-	
+//Sort the array values
+for(var i = 0; i < mainArr.length; i++) {
+  for(var j = 0; j < mainArr.length; j++) {
+    if(mainArr[j] > mainArr[j+1]) {
+      temp = mainArr[j];
+      mainArr[j] = mainArr[j+1];
+      mainArr[j+1] = temp;
+    }
+  }
+}
+console.log(mainArr);
+
+/* remove duplicates from sorted array. There are two way to remove duplicats from array
+1. delete [keyword]: delete array[index];
+2. splice() [function]: splice(index, 1);
+
+  var index = array.indexOf(value);
+      splice(index, 1);
+*/
+
+for(var k = 0; k < mainArr.length; k++) {
+  if(mainArr[k] === mainArr[k+1]) {
+    delete mainArr[k+1];
+  }
+  if(mainArr[k] !== undefined){
+    removeDup.push(mainArr[k]);
+  }  
+}
+console.log(removeDup);	
