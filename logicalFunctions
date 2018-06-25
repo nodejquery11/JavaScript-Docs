@@ -15,4 +15,3 @@ for( var i=0; i<arg.length; i++){
 }
  return output_array;
 }
-> 
