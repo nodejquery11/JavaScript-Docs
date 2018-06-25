@@ -27,7 +27,7 @@ loadScript('/js/main.js', function(d){
  
  # Promise in JS:
  Promise is the altranate of callback. As callback working as sequencial term but Promise work as parale so it is more efficeant. 
- Because it works also single thread but it doesn't wait for response or not dependent on the parent resultent.
+ Because it works also single thread but it does not wait for response or not dependent on the parent resultent.
  
  let loadScript = new Promise(function(resolve, reject) {
    setTimeout(function(){
@@ -39,7 +39,7 @@ loadScript('/js/main.js', function(d){
 Note: in promise, we thing for natural order to create the code. So fist we run main function and `.then` we think about the next 
 method like or result. `.then` can we use multiple times.
 
-# Common string function (IMP)
+# <strong>Common string function (IMP)</strong>
 
 a. str.charAt(indexNumber);           [it will return char of the string basis on the passing index]
 b. str.charCodeAt(indexNumber);       [it will return the ascii code basis of index value]
