@@ -100,12 +100,12 @@ var f = ["Banana", "Orange", "Apple", "Mango"];
 13.arr.splice(index, 1);			[It will also do the same like `delete]
 
 Note:
-$ Don't declare String, Number and Boolean as Object. Whenever you decalre variable with `New` keyword, it become an object.
+$ Dont declare String, Number and Boolean as Object. Whenever you decalre variable with `New` keyword, it become an object.
 $ In HTML, the global scope is the `window` object. All global variables belong to the window object.
 	- your global variable can overwrite window varaible. Any function or variable include the window (window.func_name) object, can overwrite your global variable and function.
 $ new String(<value>); // convert pram into string, but type will be object {drawback:: it slows down your execution speed}
 $ JS is case-sensitive, so if you pass different cases argument then it will not work and throw an error. Like var n = str.replace("MICROSOFT", "W3Schools");
-$ Formally strings are immutable, it can't change only replaced.
+$ Formally strings are immutable, it cant change only replaced.
 $ JS numbers always 64bit floating point
 $ using new Number(value), you can make any value as number. type of will be object
 $ If you want to convert the valid string into milisecond then use Date.parse(pass_full_date);
