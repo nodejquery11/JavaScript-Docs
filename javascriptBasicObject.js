@@ -20,7 +20,7 @@ A closure is an inner function that has access to the outer (enclosing) function
 	c.print();
 
 ? Will javascript support the overloading or overridding?
-JS doesn't support the overloading but support the overridding.
+JS doesnt support the overloading but support the overridding.
 
 
 ? How to check the type of variable in JS?
