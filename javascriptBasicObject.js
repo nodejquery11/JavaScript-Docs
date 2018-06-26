@@ -1,160 +1,137 @@
-What is closure?
+? What is closure
 A closure is an inner function that has access to the outer (enclosing) function's variables—scope chain. There are scopr chain
 > Own scope (variables defined between its curly brackets)
 > Access to the outer function's variable
 > Acces to the global variable
-function create() {
-   var counter = 0;
-   return {
-      increment: function() {
-         counter++;
-      },
-  
-      print: function() {
-         console.log(counter);
-      }
-   }
-}
-var c = create();
-c.increment();
-c.print();
+	function create() {
+	   var counter = 0;
+	   return {
+	      increment: function() {
+		 counter++;
+	      },
 
-Will javascript support the overloading or overridding?
+	      print: function() {
+		 console.log(counter);
+	      }
+	   }
+	}
+	var c = create();
+	c.increment();
+	c.print();
+
+? Will javascript support the overloading or overridding?
 JS doesn't support the overloading but support the overridding.
 
 
-How to check the type of variable in JS?
+? How to check the type of variable in JS?
 > Using `typeof` operator, we can check the `data type` of variable. In JavaScript we have only three kind of variable Number, String and boolean. However we have two more variable type `NULL` & `undefined`. 
 
 How to create the custom object in JS?
-var athlete = new Object();
+	var athlete = new Object();
 
-Type of loop, which reterive the object properties when their name are unknown
-for ... in
-Syntax: 
-  for(<obj> in <main_obj>){
-    document.writeln(<main_obj>[<obj>]);
-  }
-============================================================================================================
+? Type of loop, which reterive the object properties when their name are unknown
+	for ... in
+	Syntax: 
+	  for(<obj> in <main_obj>){
+	    document.writeln(<main_obj>[<obj>]);
+	  }
 
-How to create the prototype?
+? How to create the prototype 
 JS have `ptototype` keyword. which can be add the properties into the constructor function or else override the property value using the `object` of contructor.
 Syntax: <name_of_object_or_constructor_function>.prototype.<userdefine_properties>
 Ex. Car.prototype.color = 'red';
 
-Even though we can also create the prototype method using the `prototype` keyword
+? Even though we can also create the prototype method using the `prototype` keyword
 Syntax:
 Ex 
-Car.prototype.reportInfo = function(){ //anonymous function
-   .... respected code ...
-}
+	Car.prototype.reportInfo = function(){ //anonymous function
+	   .... respected code ...
+	}
 
-If we want to override the property of current define property then we need to do below process
-var honda = new Car("CRV", "4", "185"); // carete an object for constructor
-honda.color = 'blue'; //override the property value
+? If we want to override the property of current define property then we need to do below process
+	var honda = new Car("CRV", "4", "185"); // carete an object for constructor
+	honda.color = 'blue'; //override the property value
 
-Calling the prototype method
-honda.reportInfo();
+? Calling the prototype method
+	honda.reportInfo();
 
-function Car(model, numCylinder, horsepower){ /*constuctor function*/
-   this.model = model;
-   this.numCylinder = numCylinder;
-   this.horsepwoer = horsepower;
- }
- /*add the property using prototype*/
- Car.prototype.color = 'red';
- 
- /*add the method using prototype*/
- Car.prototype.reportInfo = function(){
-   document.write( ...)
- }
- 
- var honda = new Car("CRV", "4", "185"); //create an object for constructor
- honda.reportInfo(); 
- 
-==============================================================================================================
+	function Car(model, numCylinder, horsepower){ /*constuctor function*/
+	   this.model = model;
+	   this.numCylinder = numCylinder;
+	   this.horsepwoer = horsepower;
+	 }
+	 /*add the property using prototype*/
+	 Car.prototype.color = 'red';
 
-Inharitance [prototype chaining] & Extending the classes in JS?
+	 /*add the method using prototype*/
+	 Car.prototype.reportInfo = function(){
+	   document.write( ...)
+	 }
+
+	 var honda = new Car("CRV", "4", "185"); //create an object for constructor
+	 honda.reportInfo(); 
+
+? Inharitance [prototype chaining] & Extending the classes in JS
 
 
 Note:
 one suggestion, which should not do into the production code. If you use the `i < <var>.lenght` in directly to the for loop. In this case your loop go through the document object and parse the values in array and count it. It can be increase the resorce intensivity, if in your array has lots of values. So you need to declare the variable and initialize it.
 
 Topic: 31/Jan/17
-Besic data type in JS
-Regular Expression
-SubSting & formatting the string
-Math & Date Object
+	Besic data type in JS
+	Regular Expression
+	SubSting & formatting the string
+	Math & Date Object
 
-undefine & null variable:
-> if you want to find or know the variable `type` then in JS has keyword call `typeof`.
-> if you initialize the variable but not assign the value to it then it will trigger the `undefined` statement.
-ex.  var x;
-(typeof x === 'undefined')? 'undefined' : 'value ' + x + ';' + typeof x;
+? undefine & null variable:
+	if you want to find or know the variable `type` then in JS has keyword call `typeof`.
+	if you initialize the variable but not assign the value to it then it will trigger the `undefined` statement.
+	ex.  var x;
+	(typeof x === 'undefined')? 'undefined' : 'value ' + x + ';' + typeof x;
 
-How to create empty object in JS?
-> var x = {};
+? How to create empty object in JS?
+	var x = {};
 
-Regular Expression:
-literal Regular Exp (String variable) : /<string>/<modifier>
-Ex. re = /Sample/i
-Checking Methods in Reg Exp:
-re.exec(<string>); // it will return the exact variable value
-re.test(<string>); //true & false value
+? Regular Expression:
+	literal Regular Exp (String variable) : /<string>/<modifier>
+	Ex. re = /Sample/i
+	Checking Methods in Reg Exp:
+	re.exec(<string>); // it will return the exact variable value
+	re.test(<string>); //true & false value
 
-Regular Exp as an object: new RegExp('<string>', 'modifier');
+	Regular Exp as an object: new RegExp('<string>', 'modifier');
 
-SubSting: str.substr('<starting_index_number>', <num_string_or_chr>');
-str.substring('<starting_index_number>', <num_chr_increseing>>' //it will start from index value but choose the zero index to num of cahr.
-Ex. str = 'Hello World';
-var x = str.substr(2, 3);
-document.write('Num of string '+ x);
-output: llo
-var x = str.substring();
-document.write('Num of string '+ x);
-output: l
+? Number formatting:
+	num.toFixed(<dec_place>);
+	num.toPrecision();
+	num.toLocaleSring(); //to get the orignal value
 
-Formatting String:
-str.toLowerCase(); //Change all the char in lower case
-str.toUpperCase(); //Change all the char in upper case
-str.trim(); //trim white space in both side
-str.bold(); //make the char bold
+? Date & Time object: t = new Date();
+	t.toString(); //string rep of date object
+	t.toGMTString();
+	t.toUTCString();
+	t.toLocaleDateString(); //return date accordning the geo location
+	t.getDay();
+	t.setYear();
 
-Number formatting:
-num.toFixed(<dec_place>);
-num.toPrecision();
-num.toLocaleSring(); //to get the orignal value
+? Boolean Object: b = new Boolean();
+	Ex. c= Boolean(2>5); //false
 
-Math object
-math.random(); // return the random number 0 to 1
-math.floor(); //return the round number
+? Working with Files:
+	Working with XML files: xmlHttp = new XMLHttpRequest(); //object creation
+	xmlHttp.open('GET/POST', 'URL', false/true); //method Asynchronus as per the (true & false)
+	xmlHttp.send();
+	xmlHttp.readyState / 
+	xmlHttp.status
+	xmlDom = xmlHttp.responseXML //get response from the dom object
+	>>xmlDom.getElementByTag("<ele_name>")[<index_num>].childNodes[<index_num>].nodeValue;
 
-Date & Time object: t = new Date();
-t.toString(); //string rep of date object
-t.toGMTString();
-t.toUTCString();
-t.toLocaleDateString(); //return date accordning the geo location
-t.getDay();
-t.setYear();
+? JS event:
+	document.getElementById('ele_name').addEventListener('event_name [like click]', 'function_name', asynch (true/false));
+	need to understand the `event`object like function_name(even);
+	event.timeStamp;
 
-Boolean Object: b = new Boolean();
-Ex. c= Boolean(2>5); //false
-
-Working with Files:
-Working with XML files: xmlHttp = new XMLHttpRequest(); //object creation
-xmlHttp.open('GET/POST', 'URL', false/true); //method Asynchronus as per the (true & false)
-xmlHttp.send();
-xmlHttp.readyState / 
-xmlHttp.status
-xmlDom = xmlHttp.responseXML //get response from the dom object
->>xmlDom.getElementByTag("<ele_name>")[<index_num>].childNodes[<index_num>].nodeValue;
-
-JS event:
-> document.getElementById('ele_name').addEventListener('event_name [like click]', 'function_name', asynch (true/false));
-> need to understand the `event`object like function_name(even);
->> event.timeStamp;
-
-========================================================================================================
+=======================================================================================================================
 Functions in jQuery
 
 1. [selector].load() // When body will be load in browser
@@ -194,7 +171,7 @@ $.ajax({
    });
 
 > If you wan add contain dynamically in web page 
-$("#element").append("value");
+	$("#element").append("value");
 
 > $("#tab").tabs();
 
